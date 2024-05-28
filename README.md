@@ -59,7 +59,7 @@ Here is the content converted into a Markdown table suitable for a GitHub README
 | t.     | NumWebVisitsMonth | Number of visits to company’s website in the last month |
 | u.     | Response (target) | 1 if customer accepted the offer in the last campaign, 0 otherwise |
 | v.     | Recency       | Number of days since the last purchase |
-```
+
 
 The dataset has 2240 observations and 22 columns
 
