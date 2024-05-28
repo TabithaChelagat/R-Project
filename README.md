@@ -257,7 +257,74 @@ unique_marital<-unique(superstore_data$Marital_Status)
 unique_marital
 ## [1] "Divorced" "Single"   "Married"  "Together" "Widow"
 ```
+
+# Performing Exploratory Data Analysis
+
+* A pie chart of the educational level of the customers
+```
+Education <-table(superstore_data$Education)
+Education
+```
+```
+## 
+##   2n Cycle      Basic Graduation     Master        PhD 
+##        203         54       1127        370        486
+```
+```
+pie(Education, col=hcl.colors(5))
+```
 ![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/4bc9ea2d-b3eb-4e2f-9f1d-ea08a123dfbe)
+
+Observation: 
+Most of the customers are in the graduation sub-category, this is followed by those who hold PHDs and Masters. The least are those with basic education.
+
+* Ggplot comparing Income vs Education
+```
+library("ggplot2") #Library that supports plotting
+ggplot(data=superstore_data)+
+  geom_bar(mapping = aes(x = Education, y = Income, fill = Education, color = "purple"), stat = "identity")+
+  labs(title = "Income Vs Education", x = "Education", y = "Income")
+```
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/bc31c8cb-9b1d-4baa-a6d5-a06cde7fac65)
+
+Observation: 
+The ggplot shows that those who have graduated have the highest income with those with basic education have the least income.
+
+*A scatter plot of year of birth vs sweet products*
+```
+ggplot(data=superstore_data)+
+  geom_point(mapping = aes(x = Year_Birth, y = MntSweetProducts, color = "navy"))+
+  labs(title = "Year of birth vs sweet products", x = "Year of Birth", y = "Sweet Products")
+```
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/8f5317e7-2efb-4a5e-8cc0-fb1bfa5ad417)
+
+Observation: 
+The scatter shows that majority of the people born between 1950 and 1980 are the most purchases of sweet products.
+
+*A table of complains*
+```
+complains<-table(superstore_data$Complain)
+complains
+```
+```
+## 
+##    0    1 
+## 2219   21
+```
+*Barplot of complains*
+```
+barplot(complains)
+```
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/95b7e423-93c6-44da-90f8-8f3f67ab0830)
+
+Observation: 
+The barplot for complains showing that the data is imbalanced
+
+
+
+
+
+
 
 
 
