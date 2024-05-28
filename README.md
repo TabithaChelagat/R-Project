@@ -1,4 +1,4 @@
-# R-Project(Onging project...)
+# R-Project(Ongoing project...)
 ## Predicting the chances of a customer giving a positive response(Data Exploration, cleaning, formatting and exploration)
 
 Overview 
