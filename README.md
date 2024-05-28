@@ -320,6 +320,67 @@ barplot(complains)
 Observation: 
 The barplot for complains showing that the data is imbalanced
 
+* Comparing the Year of birth against Complain*
+```
+ggplot(data=superstore_data)+
+  geom_bar(mapping = aes(y=Complain, x=Year_Birth, fill="purple"), stat ="identity")+
+  labs(title="Complains is relation to year of birth", y="Complain", x="Year of Birth")
+```
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/7d47a848-f483-4880-bd9b-b93d0db484ab)
+
+Observation: Most complaints were recorded from customers born between 1950 and 1980.
+
+* Barplot for response
+```
+responses<-table(superstore_data$Response)
+barplot(responses)
+```
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/62c5cede-8e95-4a48-9fd7-e7e711758767)
+
+Observation: 
+This barplot shows the variance of Responses which shows imbalanced data.
+
+* Comparing the Year of birth against Response
+```
+ggplot(data=superstore_data)+
+  geom_bar(mapping = aes(x=Year_Birth, y=Response, fill="purple"), stat ="identity")+
+  labs(title="Response is relation to year of birth", x="Year of Birth", y="Response")
+```
+
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/74b1f1ef-0ca4-49d6-b356-be0cb4491d5b)
+
+Observation: 
+Most responses were recorded from customers born from 1940. the highest number came from customers born around 1970.
+
+* Scatter plot between Year of birth and Fish products
+```
+ggplot(data=superstore_data)+
+  geom_point(mapping = aes(x=Year_Birth, y=MntFishProducts, color="navy"), stat ="identity")+
+  labs(title="MntFishProducts is relation to year of birth", x="Year of Birth", y="MntFishProducts")
+```
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/21279256-34d5-481c-83b2-4a4e01a0ac18)
+
+* Scatter plot showing year of birth versus amount of wine purchased. 
+```
+ggplot(data=superstore_data)+
+  geom_point(mapping = aes(x=Year_Birth, y=MntWines, color="navy"), stat ="identity")+
+  labs(title="MntWines is relation to year of birth", x="Year of Birth", y="MntWines")
+```
+
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/9601ccdf-93b0-4a57-827b-893cc5658f1b)
+
+* Boxplot between Income and  Marital Status
+
+```
+ggplot(data=superstore_data)+
+  geom_line(mapping = aes(y=Income, x=Marital_Status, color="navy"), stat ="identity")+
+  labs(title="Income Vs Marital Status", y="Income", x="Marital Status")
+```
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/26145e6a-a63a-4df0-a0cb-cd79fd69c03a)
+
+Observation: 
+Almost all categories have similar incomes, the widowed have a higher average income while those who are together have some extremely high cases of income levels.
+
 
 
 
