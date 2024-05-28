@@ -30,3 +30,59 @@ e. Giving Recommendations
 
 ##Data Relevance and Validation 
 The data available is relevant for the intended analysis. It contains information that is significant to predicting the likelihood of a customer giving a positive response. It has data on customers income, education levels, marital status, children in the households, shopping trends, and the responses and complaints.
+
+Here is the content converted into a Markdown table suitable for a GitHub README file:
+
+##Understanding the context The data set we are to work with contains the following columns:
+
+| **ID** | **Attribute** | **Description** |
+|--------|---------------|-----------------|
+| a.     | ID            | Unique ID of each customer |
+| b.     | Year_Birth    | Age of the customer |
+| c.     | Complain      | 1 if the customer complained in the last 2 years |
+| d.     | Dt_Customer   | Date of customer’s enrollment with the company |
+| e.     | Education     | Customer’s level of education |
+| f.     | Marital       | Customer’s marital status |
+| g.     | Kidhome       | Number of small children in customer’s household |
+| h.     | Teenhome      | Number of teenagers in customer’s household |
+| i.     | Income        | Customer’s yearly household income |
+| j.     | MntFishProducts | The amount spent on fish products in the last 2 years |
+| k.     | MntMeatProducts | The amount spent on meat products in the last 2 years |
+| l.     | MntFruits     | The amount spent on fruits products in the last 2 years |
+| m.     | MntSweetProducts | Amount spent on sweet products in the last 2 years |
+| n.     | MntWines      | The amount spent on wine products in the last 2 years |
+| o.     | MntGoldProds  | The amount spent on gold products in the last 2 years |
+| p.     | NumDealsPurchases | Number of purchases made with discount |
+| q.     | NumCatalogPurchases | Number of purchases made using catalog (buying goods to be shipped through the mail) |
+| r.     | NumStorePurchases | Number of purchases made directly in stores |
+| s.     | NumWebPurchases | Number of purchases made through the company’s website |
+| t.     | NumWebVisitsMonth | Number of visits to company’s website in the last month |
+| u.     | Response (target) | 1 if customer accepted the offer in the last campaign, 0 otherwise |
+| v.     | Recency       | Number of days since the last purchase |
+```
+
+The dataset has 2240 observations and 22 columns
+
+This dataset can be accessed from this link:Superstore Marketing Campaign
+
+##Reading and Understanding The Dataset
+--importing the data
+
+```
+store_data = read.csv("superstore_data.csv")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
