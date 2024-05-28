@@ -104,9 +104,161 @@ head(superstore_data,5)
 ## 5                   1                 2                 7        1        0
 ```
 
+*Reading the last 5 rows of the data set*
+```
+tail(superstore_data,5)
+```
+```
+##         Id Year_Birth  Education Marital_Status Income Kidhome Teenhome
+## 2236 10142       1976        PhD       Divorced  66476       0        1
+## 2237  5263       1977   2n Cycle        Married  31056       1        0
+## 2238    22       1976 Graduation       Divorced  46310       1        0
+## 2239   528       1978 Graduation        Married  65819       0        0
+## 2240  4070       1969        PhD        Married  94871       0        2
+##      Dt_Customer Recency MntWines MntFruits MntMeatProducts MntFishProducts
+## 2236    7/3/2013      99      372        18             126              47
+## 2237   1/22/2013      99        5        10              13               3
+## 2238   3/12/2012      99      185         2              88              15
+## 2239  11/29/2012      99      267        38             701             149
+## 2240    1/9/2012      99      169        24             553             188
+##      MntSweetProducts MntGoldProds NumDealsPurchases NumWebPurchases
+## 2236               48           78                 2               5
+## 2237                8           16                 1               1
+## 2238                5           14                 2               6
+## 2239              165           63                 1               5
+## 2240                0          144                 1               8
+##      NumCatalogPurchases NumStorePurchases NumWebVisitsMonth Response Complain
+## 2236                   2                11                 4        0        0
+## 2237                   0                 3                 8        0        0
+## 2238                   1                 5                 8        0        0
+## 2239                   4                10                 3        0        0
+## 2240                   5                 4                 7        1        0
+```
 
+*Checking for the data types of the variables*
+```
+str(superstore_data)
+```
+```
+## 'data.frame':    2240 obs. of  22 variables:
+##  $ Id                 : int  1826 1 10476 1386 5371 7348 4073 1991 4047 9477 ...
+##  $ Year_Birth         : int  1970 1961 1958 1967 1989 1958 1954 1967 1954 1954 ...
+##  $ Education          : chr  "Graduation" "Graduation" "Graduation" "Graduation" ...
+##  $ Marital_Status     : chr  "Divorced" "Single" "Married" "Together" ...
+##  $ Income             : int  84835 57091 67267 32474 21474 71691 63564 44931 65324 65324 ...
+##  $ Kidhome            : int  0 0 0 1 1 0 0 0 0 0 ...
+##  $ Teenhome           : int  0 0 1 1 0 0 0 1 1 1 ...
+##  $ Dt_Customer        : chr  "6/16/2014" "6/15/2014" "5/13/2014" "11/5/2014" ...
+##  $ Recency            : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ MntWines           : int  189 464 134 10 6 336 769 78 384 384 ...
+##  $ MntFruits          : int  104 5 11 0 16 130 80 0 0 0 ...
+##  $ MntMeatProducts    : int  379 64 59 1 24 411 252 11 102 102 ...
+##  $ MntFishProducts    : int  111 7 15 0 11 240 15 0 21 21 ...
+##  $ MntSweetProducts   : int  189 0 2 0 0 32 34 0 32 32 ...
+##  $ MntGoldProds       : int  218 37 30 0 34 43 65 7 5 5 ...
+##  $ NumDealsPurchases  : int  1 1 1 1 2 1 1 1 3 3 ...
+##  $ NumWebPurchases    : int  4 7 3 1 3 4 10 2 6 6 ...
+##  $ NumCatalogPurchases: int  4 3 2 0 1 7 10 1 2 2 ...
+##  $ NumStorePurchases  : int  6 7 5 2 2 5 7 3 9 9 ...
+##  $ NumWebVisitsMonth  : int  1 5 2 7 7 2 6 5 4 4 ...
+##  $ Response           : int  1 1 0 0 1 1 1 0 0 0 ...
+##  $ Complain           : int  0 0 0 0 0 0 0 0 0 0 ...
+```
+The output shows that the dataset has 22 columns and 2240 rows.With 3 characters and the rest as integers.
 
+*Checking the dimension of the data*
+```
+dim(superstore_data)
+```
+```
+## [1] 2240   22
+```
+This dataset has 2240 rows and 22 columns
 
+# Cleaning the Dataset
+*Checking for missing variables*
+```
+colSums(is.na(superstore_data))
+```
+```
+##                  Id          Year_Birth           Education      Marital_Status 
+##                   0                   0                   0                   0 
+##              Income             Kidhome            Teenhome         Dt_Customer 
+##                  24                   0                   0                   0 
+##             Recency            MntWines           MntFruits     MntMeatProducts 
+##                   0                   0                   0                   0 
+##     MntFishProducts    MntSweetProducts        MntGoldProds   NumDealsPurchases 
+##                   0                   0                   0                   0 
+##     NumWebPurchases NumCatalogPurchases   NumStorePurchases   NumWebVisitsMonth 
+##                   0                   0                   0                   0 
+##            Response            Complain 
+##                   0                   0
+```
+This shows that the Income column is the only one with missing values.
+
+*Replacing the missing values with the mean of the column*
+```
+superstore_data = store_data %>%
+  mutate(Income = if_else(is.na(Income), mean(Income, na.rm = TRUE), Income))
+```
+*Checking to confirm the missing variables have been filled*
+```
+colSums(is.na(superstore_data))
+```
+```
+##                  Id          Year_Birth           Education      Marital_Status 
+##                   0                   0                   0                   0 
+##              Income             Kidhome            Teenhome         Dt_Customer 
+##                   0                   0                   0                   0 
+##             Recency            MntWines           MntFruits     MntMeatProducts 
+##                   0                   0                   0                   0 
+##     MntFishProducts    MntSweetProducts        MntGoldProds   NumDealsPurchases 
+##                   0                   0                   0                   0 
+##     NumWebPurchases NumCatalogPurchases   NumStorePurchases   NumWebVisitsMonth 
+##                   0                   0                   0                   0 
+##            Response            Complain 
+##                   0                   0
+```
+Observation: This shows that all missing values have been replaced with the mean,hence no missing values.
+
+* Checking for the unique values in the Marital Status column*
+```
+library(dplyr)
+```
+```
+## 
+## Attaching package: 'dplyr'
+```
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+```
+unique_values<-unique(superstore_data$Marital_Status)
+
+```
+```
+unique_values
+## [1] "Divorced" "Single"   "Married"  "Together" "Widow"    "YOLO"     "Alone"   
+## [8] "Absurd"
+```
+*Changing the variables in the Marital status column that are not in line*
+```
+superstore_data = superstore_data %>% 
+  mutate(Marital_Status = case_when(
+    Marital_Status == "YOLO" ~ "Single",
+    Marital_Status == "Alone" ~ "Single",
+    Marital_Status == "Absurd" ~ "Single",
+    TRUE ~ Marital_Status
+  ))
+
+```
 
 
 
