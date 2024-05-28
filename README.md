@@ -77,6 +77,7 @@ store_data = read.csv("superstore_data.csv")
 head(superstore_data,5)
 
 ```
+```
 ##      Id Year_Birth  Education Marital_Status Income Kidhome Teenhome
 ## 1  1826       1970 Graduation       Divorced  84835       0        0
 ## 2     1       1961 Graduation         Single  57091       0        0
@@ -101,7 +102,7 @@ head(superstore_data,5)
 ## 3                   2                 5                 2        0        0
 ## 4                   0                 2                 7        0        0
 ## 5                   1                 2                 7        1        0
-
+```
 
 
 
