@@ -66,15 +66,41 @@ The dataset has 2240 observations and 22 columns
 This dataset can be accessed from this link:Superstore Marketing Campaign
 
 ##Reading and Understanding The Dataset
---importing the data
+*importing the data*
 
 ```
 store_data = read.csv("superstore_data.csv")
 
 ```
+*Reading the first five rows of the data set*
+```
+head(superstore_data,5)
 
-
-
+```
+##      Id Year_Birth  Education Marital_Status Income Kidhome Teenhome
+## 1  1826       1970 Graduation       Divorced  84835       0        0
+## 2     1       1961 Graduation         Single  57091       0        0
+## 3 10476       1958 Graduation        Married  67267       0        1
+## 4  1386       1967 Graduation       Together  32474       1        1
+## 5  5371       1989 Graduation         Single  21474       1        0
+##   Dt_Customer Recency MntWines MntFruits MntMeatProducts MntFishProducts
+## 1   6/16/2014       0      189       104             379             111
+## 2   6/15/2014       0      464         5              64               7
+## 3   5/13/2014       0      134        11              59              15
+## 4   11/5/2014       0       10         0               1               0
+## 5    8/4/2014       0        6        16              24              11
+##   MntSweetProducts MntGoldProds NumDealsPurchases NumWebPurchases
+## 1              189          218                 1               4
+## 2                0           37                 1               7
+## 3                2           30                 1               3
+## 4                0            0                 1               1
+## 5                0           34                 2               3
+##   NumCatalogPurchases NumStorePurchases NumWebVisitsMonth Response Complain
+## 1                   4                 6                 1        1        0
+## 2                   3                 7                 5        1        0
+## 3                   2                 5                 2        0        0
+## 4                   0                 2                 7        0        0
+## 5                   1                 2                 7        1        0
 
 
 
