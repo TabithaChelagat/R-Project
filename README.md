@@ -226,20 +226,6 @@ Observation: This shows that all missing values have been replaced with the mean
 library(dplyr)
 ```
 ```
-## 
-## Attaching package: 'dplyr'
-```
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-```
 unique_values<-unique(superstore_data$Marital_Status)
 
 ```
@@ -260,8 +246,18 @@ superstore_data = superstore_data %>%
 
 ```
 
-
-
+*Checking to see whether the variables in the Marital Status column have been changed*
+```
+unique_marital<-unique(superstore_data$Marital_Status)
+unique_marital
+```
+```
+# Checking to see whether the variables in the Marital Status column have been changed
+unique_marital<-unique(superstore_data$Marital_Status)
+unique_marital
+## [1] "Divorced" "Single"   "Married"  "Together" "Widow"
+```
+![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/4bc9ea2d-b3eb-4e2f-9f1d-ea08a123dfbe)
 
 
 
