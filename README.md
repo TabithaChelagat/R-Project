@@ -7,20 +7,24 @@
 A superstore is planning for the year-end sale.They want to launch a new offer - gold membership, that gives a 20% discount on all purchases, for only $499 which is $999 on other days.It will be valid only for existing customers and the campaign through phone calls is currently being planned for them. The management feels that the best way to reduce the cost of the campaign is to make a predictive model which will classify customers who might purchase the offer.
 
 ***Objectives***
+
 Work will aim to meet the following objectives; 
 i. To predict the likelihood of the customers giving a positive response. 
 ii. To identify the different factors that affect a customer’s response.
 
 ***Questions***
+
 The work will seek to answer the following questions; 
 i) What is the likelihood of the customers giving a positive response? 
 ii) What are the factors that affect a customer’s response?
 
 ***Metrics for Success***
+
 For this work, the success will include coming up with a model that correctly predicts the likelihood of a customer to give a positive response. Success will also be achieved by correctly analyzing and establishing the factors that contribute towards a customer giving a positive response to the Superstore campaign.
 We aim to achieve an accuracy level of 90%.
 
 ***The Experimental Design***
+
 Below are the steps taken in this analysis 
 a. Loading the required libraries 
 b. Loading and previewing data 
@@ -70,7 +74,7 @@ This dataset can be accessed from this link:Superstore Marketing Campaign
 
 **Reading and Understanding The Dataset**
 
-***importing the data***
+* Importing the data
 
 ```
 store_data = read.csv("superstore_data.csv")
