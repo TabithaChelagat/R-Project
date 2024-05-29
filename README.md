@@ -1,7 +1,9 @@
-**R-Project(Ongoing project...)**
+**R-PROJECT(Ongoing project...)**
+
 **Predicting the chances of a customer giving a positive response(Data Exploration, cleaning, formatting and analysis)**
 
 ***Overview***
+
 A superstore is planning for the year-end sale.They want to launch a new offer - gold membership, that gives a 20% discount on all purchases, for only $499 which is $999 on other days.It will be valid only for existing customers and the campaign through phone calls is currently being planned for them. The management feels that the best way to reduce the cost of the campaign is to make a predictive model which will classify customers who might purchase the offer.
 
 ***Objectives***
@@ -28,11 +30,14 @@ e. Creating a model to predict
 d. Drawing conclusions 
 e. Giving Recommendations
 
-**Data Relevance and Validation**
+**DATA RELEVANCE AND VALIDATION**
+
 The data available is relevant for the intended analysis. It contains information that is significant to predicting the likelihood of a customer giving a positive response. It has data on customers income, education levels, marital status, children in the households, shopping trends, and the responses and complaints.
 
-***Understanding the context The data set we are to work with contains the following columns:***
+**DATA EXPLORATION**
 
+* Colums content
+  
 | **ID** | **Attribute** | **Description** |
 |--------|---------------|-----------------|
 | a.     | ID            | Unique ID of each customer |
@@ -64,6 +69,7 @@ The dataset has 2240 observations and 22 columns
 This dataset can be accessed from this link:Superstore Marketing Campaign
 
 **Reading and Understanding The Dataset**
+
 ***importing the data***
 
 ```
