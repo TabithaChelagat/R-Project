@@ -4,7 +4,7 @@
 Overview 
 A superstore is planning for the year-end sale.They want to launch a new offer - gold membership, that gives a 20% discount on all purchases, for only $499 which is $999 on other days.It will be valid only for existing customers and the campaign through phone calls is currently being planned for them. The management feels that the best way to reduce the cost of the campaign is to make a predictive model which will classify customers who might purchase the offer.
 
-##Objectives 
+##Objectives##
 Work will aim to meet the following objectives; 
 i. To predict the likelihood of the customers giving a positive response. 
 ii. To identify the different factors that affect a customer’s response.
