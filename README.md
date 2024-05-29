@@ -284,7 +284,6 @@ pie(Education, col=hcl.colors(5))
 ![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/4bc9ea2d-b3eb-4e2f-9f1d-ea08a123dfbe)
 
 *Observation:*
-
 Most of the customers are in the graduation sub-category, this is followed by those who hold PHDs and Masters. The least are those with basic education.
 
 * Ggplot comparing Income vs Education
@@ -297,7 +296,6 @@ ggplot(data=superstore_data)+
 ![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/bc31c8cb-9b1d-4baa-a6d5-a06cde7fac65)
 
 *Observation:*
-
 The ggplot shows that those who have graduated have the highest income with those with basic education have the least income.
 
 * A scatter plot of year of birth vs sweet products
@@ -309,7 +307,6 @@ ggplot(data=superstore_data)+
 ![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/8f5317e7-2efb-4a5e-8cc0-fb1bfa5ad417)
 
 *Observation:*
-
 The scatter shows that majority of the people born between 1950 and 1980 are the most purchases of sweet products.
 
 * A table of complains
@@ -329,7 +326,6 @@ barplot(complains)
 ![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/95b7e423-93c6-44da-90f8-8f3f67ab0830)
 
 *Observation:*
-
 The barplot for complains showing that the data is imbalanced
 
 * Comparing the Year of birth against Complain
@@ -351,7 +347,6 @@ barplot(responses)
 ![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/62c5cede-8e95-4a48-9fd7-e7e711758767)
 
 *Observation:*
-
 This barplot shows the variance of Responses which shows imbalanced data.
 
 * Comparing the Year of birth against Response
@@ -364,7 +359,6 @@ ggplot(data=superstore_data)+
 ![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/74b1f1ef-0ca4-49d6-b356-be0cb4491d5b)
 
 *Observation:*
-
 Most responses were recorded from customers born from 1940. the highest number came from customers born around 1970.
 
 * Scatter plot between Year of birth and Fish products
@@ -394,7 +388,6 @@ ggplot(data=superstore_data)+
 ![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/26145e6a-a63a-4df0-a0cb-cd79fd69c03a)
 
 *Observation:*
-
 Almost all categories have similar incomes, the widowed have a higher average income while those who are together have some extremely high cases of income levels.
 
 
