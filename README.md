@@ -1,24 +1,24 @@
-# R-Project(Ongoing project...)
-## Predicting the chances of a customer giving a positive response(Data Exploration, cleaning, formatting and analysis)
+**R-Project(Ongoing project...)**
+**Predicting the chances of a customer giving a positive response(Data Exploration, cleaning, formatting and analysis)**
 
-Overview 
+***Overview***
 A superstore is planning for the year-end sale.They want to launch a new offer - gold membership, that gives a 20% discount on all purchases, for only $499 which is $999 on other days.It will be valid only for existing customers and the campaign through phone calls is currently being planned for them. The management feels that the best way to reduce the cost of the campaign is to make a predictive model which will classify customers who might purchase the offer.
 
-##Objectives##
+***Objectives***
 Work will aim to meet the following objectives; 
 i. To predict the likelihood of the customers giving a positive response. 
 ii. To identify the different factors that affect a customer’s response.
 
-##Questions 
+***Questions***
 The work will seek to answer the following questions; 
 i) What is the likelihood of the customers giving a positive response? 
 ii) What are the factors that affect a customer’s response?
 
-##Metrics for Success 
+***Metrics for Success***
 For this work, the success will include coming up with a model that correctly predicts the likelihood of a customer to give a positive response. Success will also be achieved by correctly analyzing and establishing the factors that contribute towards a customer giving a positive response to the Superstore campaign.
 We aim to achieve an accuracy level of 90%.
 
-##The Experimental Design 
+***The Experimental Design***
 Below are the steps taken in this analysis 
 a. Loading the required libraries 
 b. Loading and previewing data 
@@ -28,12 +28,10 @@ e. Creating a model to predict
 d. Drawing conclusions 
 e. Giving Recommendations
 
-##Data Relevance and Validation 
+**Data Relevance and Validation**
 The data available is relevant for the intended analysis. It contains information that is significant to predicting the likelihood of a customer giving a positive response. It has data on customers income, education levels, marital status, children in the households, shopping trends, and the responses and complaints.
 
-Here is the content converted into a Markdown table suitable for a GitHub README file:
-
-##Understanding the context The data set we are to work with contains the following columns:
+***Understanding the context The data set we are to work with contains the following columns:***
 
 | **ID** | **Attribute** | **Description** |
 |--------|---------------|-----------------|
@@ -65,14 +63,14 @@ The dataset has 2240 observations and 22 columns
 
 This dataset can be accessed from this link:Superstore Marketing Campaign
 
-##Reading and Understanding The Dataset
-*importing the data*
+**Reading and Understanding The Dataset**
+***importing the data***
 
 ```
 store_data = read.csv("superstore_data.csv")
 
 ```
-*Reading the first five rows of the data set*
+* Reading the first five rows of the data set
 ```
 head(superstore_data,5)
 
@@ -104,7 +102,7 @@ head(superstore_data,5)
 ## 5                   1                 2                 7        1        0
 ```
 
-*Reading the last 5 rows of the data set*
+* Reading the last 5 rows of the data set
 ```
 tail(superstore_data,5)
 ```
@@ -135,7 +133,7 @@ tail(superstore_data,5)
 ## 2240                   5                 4                 7        1        0
 ```
 
-*Checking for the data types of the variables*
+* Checking for the data types of the variables
 ```
 str(superstore_data)
 ```
@@ -166,7 +164,7 @@ str(superstore_data)
 ```
 The output shows that the dataset has 22 columns and 2240 rows.With 3 characters and the rest as integers.
 
-*Checking the dimension of the data*
+* Checking the dimension of the data
 ```
 dim(superstore_data)
 ```
@@ -175,8 +173,8 @@ dim(superstore_data)
 ```
 This dataset has 2240 rows and 22 columns
 
-# Cleaning the Dataset
-*Checking for missing variables*
+**Cleaning the Dataset**
+***Checking for missing variables***
 ```
 colSums(is.na(superstore_data))
 ```
@@ -196,12 +194,12 @@ colSums(is.na(superstore_data))
 ```
 This shows that the Income column is the only one with missing values.
 
-*Replacing the missing values with the mean of the column*
+* Replacing the missing values with the mean of the column
 ```
 superstore_data = store_data %>%
   mutate(Income = if_else(is.na(Income), mean(Income, na.rm = TRUE), Income))
 ```
-*Checking to confirm the missing variables have been filled*
+* Checking to confirm the missing variables have been filled
 ```
 colSums(is.na(superstore_data))
 ```
@@ -221,7 +219,7 @@ colSums(is.na(superstore_data))
 ```
 Observation: This shows that all missing values have been replaced with the mean,hence no missing values.
 
-* Checking for the unique values in the Marital Status column*
+* Checking for the unique values in the Marital Status column
 ```
 library(dplyr)
 ```
@@ -234,7 +232,7 @@ unique_values
 ## [1] "Divorced" "Single"   "Married"  "Together" "Widow"    "YOLO"     "Alone"   
 ## [8] "Absurd"
 ```
-*Changing the variables in the Marital status column that are not in line*
+* Changing the variables in the Marital status column that are not in line
 ```
 superstore_data = superstore_data %>% 
   mutate(Marital_Status = case_when(
@@ -246,19 +244,19 @@ superstore_data = superstore_data %>%
 
 ```
 
-*Checking to see whether the variables in the Marital Status column have been changed*
+* Checking to see whether the variables in the Marital Status column have been changed
 ```
 unique_marital<-unique(superstore_data$Marital_Status)
 unique_marital
 ```
 ```
-# Checking to see whether the variables in the Marital Status column have been changed
+* Checking to see whether the variables in the Marital Status column have been changed
 unique_marital<-unique(superstore_data$Marital_Status)
 unique_marital
 ## [1] "Divorced" "Single"   "Married"  "Together" "Widow"
 ```
 
-# Performing Exploratory Data Analysis
+**Performing Exploratory Data Analysis**
 
 * A pie chart of the educational level of the customers
 ```
@@ -290,7 +288,7 @@ ggplot(data=superstore_data)+
 Observation: 
 The ggplot shows that those who have graduated have the highest income with those with basic education have the least income.
 
-*A scatter plot of year of birth vs sweet products*
+* A scatter plot of year of birth vs sweet products
 ```
 ggplot(data=superstore_data)+
   geom_point(mapping = aes(x = Year_Birth, y = MntSweetProducts, color = "navy"))+
@@ -301,7 +299,7 @@ ggplot(data=superstore_data)+
 Observation: 
 The scatter shows that majority of the people born between 1950 and 1980 are the most purchases of sweet products.
 
-*A table of complains*
+* A table of complains
 ```
 complains<-table(superstore_data$Complain)
 complains
@@ -311,7 +309,7 @@ complains
 ##    0    1 
 ## 2219   21
 ```
-*Barplot of complains*
+* Barplot of complains
 ```
 barplot(complains)
 ```
@@ -320,7 +318,7 @@ barplot(complains)
 Observation: 
 The barplot for complains showing that the data is imbalanced
 
-* Comparing the Year of birth against Complain*
+* Comparing the Year of birth against Complain
 ```
 ggplot(data=superstore_data)+
   geom_bar(mapping = aes(y=Complain, x=Year_Birth, fill="purple"), stat ="identity")+
@@ -360,7 +358,7 @@ ggplot(data=superstore_data)+
 ```
 ![download](https://github.com/TabithaChelagat/R-Project/assets/112205355/21279256-34d5-481c-83b2-4a4e01a0ac18)
 
-* Scatter plot showing year of birth versus amount of wine purchased. 
+* Scatter plot showing year of birth versus amount of wine purchased 
 ```
 ggplot(data=superstore_data)+
   geom_point(mapping = aes(x=Year_Birth, y=MntWines, color="navy"), stat ="identity")+
