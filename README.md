@@ -390,7 +390,7 @@ ggplot(data=superstore_data)+
 *Observation:*
 Almost all categories have similar incomes, the widowed have a higher average income while those who are together have some extremely high cases of income levels.
 
-
+**Performing Predictive Data Analysis**
 
 
 
